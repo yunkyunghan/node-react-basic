@@ -4,3 +4,6 @@
 npm install express --save <br>
 npm i mongoose@5.8.5 (버전 문제로 downgrade하여 사용) or npm install mongoose --save
 ```
+
+### postman test
+![image](https://user-images.githubusercontent.com/75987810/137070193-a24e8065-c025-4fd1-b601-396e496d54c1.png)
