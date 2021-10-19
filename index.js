@@ -19,7 +19,7 @@ mongoose.connect('mongodb+srv://hanyk:dbsrud12@boilerplate.gwosc.mongodb.net/myF
   .then(() => console.log('MongoDB Connected...'))
   .catch((err) => console.log('MongoDB Connected...', err))
 
-app.get('/', (req, res) => res.send('Hello World!안녕하세요'))
+app.get('/', (req, res) => res.send('HI'))
 
 app.post('/register', (req, res) => {
   // 회원가입 할 때 필요한 정보를 client에서 가져오면 
