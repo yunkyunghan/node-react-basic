@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 const e = require('express');
 const saltRounds = 10;
+const jwt = require('jsonwebtoken');
 
 
 
@@ -47,7 +48,7 @@ userSchema.pre('save', function (next) { //index.js에 있는 user.save를 하�
             bcrypt.hash(user.password, salt, function (err, hash) {
                 // Store hash in your password DB.
                 if (err) return next(err)
-                user.password = hash 
+                user.password = hash
                 next()
             });
         });
@@ -56,6 +57,26 @@ userSchema.pre('save', function (next) { //index.js에 있는 user.save를 하�
     }
 })
 
-const User = mongoose.model('User', userSchema)
+userSchema.methods.comparePassword = function (plainPassword, cb) {
+    //plainPassword :12345678 , 암호화된 비밀번호:$2b$10$EVq1gQBq.3iA/crN7.UCJubtXGUBbJqEblh41mvl75Ir6NtIlRI0S
+    bcrypt.compare(plainPassword, this.password, function (err, isMatch) {
+        if (err) return cb(err);
+            cb(null, isMatch)
+    })
+}
 
-module.exports = { User } // 다른 파일에서도 사용할 수 있게 exports 
+    userSchema.methods.generateToken = function (cb) {
+        var user = this;
+        //jsonwebtoken을 이용하여 token 생성
+        var token = jwt.sign(user._id.toHexString(), 'secretToken')
+
+        user.token = token
+        user.save(function (err, user) {
+            if (err) return cb(err)
+            cb(null, user)
+        })
+    }
+
+    const User = mongoose.model('User', userSchema)
+
+    module.exports = { User } 
