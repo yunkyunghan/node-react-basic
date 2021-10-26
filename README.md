@@ -24,4 +24,6 @@ npm install cookie-parser --save
 ![image](https://user-images.githubusercontent.com/75987810/138017772-73b8e8a7-b2d6-4b4b-8737-4a4562285f25.png)
 ### generateToken test
 ![image](https://user-images.githubusercontent.com/75987810/138199958-4dce7fec-332c-4619-ad44-dd35265ef19e.png)
+### logout test
+![image](https://user-images.githubusercontent.com/75987810/138814210-9d582bb8-c661-4e92-926d-f14098dc5d1f.png)
 
