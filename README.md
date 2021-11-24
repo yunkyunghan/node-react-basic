@@ -16,6 +16,7 @@ npm install nodemon --save-dev => 자동으로 서버 재시작
 npm install bcrypt --save 
 npm install jsonwebtoken --save (https://www.npmjs.com/package/jsonwebtoken) 
 npm install cookie-parser --save
+npx create-react-app .
 ```
 
 ### postman test
