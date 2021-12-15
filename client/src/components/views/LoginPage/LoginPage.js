@@ -1,11 +1,11 @@
 import React from 'react'
 
-function LoginPate() {
+function LoginPage() {
     return (
         <div>
-            LoginPate
+            LoginPage
         </div>
     )
 }
 
-export default LoginPate
+export default LoginPage

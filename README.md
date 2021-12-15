@@ -17,6 +17,7 @@ npm install bcrypt --save
 npm install jsonwebtoken --save (https://www.npmjs.com/package/jsonwebtoken) 
 npm install cookie-parser --save
 npx create-react-app .
+npm install react-router-dom@5
 ```
 
 ### postman test
